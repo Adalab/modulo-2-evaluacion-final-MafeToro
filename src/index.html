@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Evaluación módulo II :)</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <link rel="icon" href="./images/favicon.png" />
+  </head>
+
+  <body>
+    <h1 class="find-anime-title">Busca tu anime favorito</h1>
+    <section class="find-anime">
+  <label for="name">Buscar anime</label>
+    <input type="text" name="name" class="js-search-anime" placeholder="Buscar...">
+    <input class="js-search-button" type="submit" value="Buscar"></button>
+  </section>
+    <main class="container">
+      <div><h2>Favoritos</h2><ul class="js-anime-favorites favorites"></ul></div>
+      <div><h2>Resultados</h2><ul class="js-anime-results results-anime"></div></ul>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
