@@ -1,18 +1,18 @@
-const f=document.querySelector(".js-search-anime"),d=document.querySelector(".js-search-button"),c=document.querySelector(".js-anime-results"),m=document.querySelector(".js-anime-favorites");let o=[],n=JSON.parse(localStorage.getItem("favoritesAnimes"))||[];function g(i){const e=parseInt(i.currentTarget.id),t=o.find(s=>s.mal_id===e);if(!t)return;const a=n.findIndex(s=>s.mal_id===e);a===-1?n.push(t):n.splice(a,1),localStorage.setItem("favoritesAnimes",JSON.stringify(n)),l(),v(o)}function l(){m.innerHTML="";for(const i of n){let e="";e+=`
+const f=document.querySelector(".js-search-anime"),u=document.querySelector(".js-search-button"),m=document.querySelector(".js-anime-results"),d=document.querySelector(".js-anime-favorites");let o=[],n=JSON.parse(localStorage.getItem("favoritesAnimes"))||[];function g(t){const i=parseInt(t.currentTarget.id),e=o.find(s=>s.mal_id===i);if(!e)return;const a=n.findIndex(s=>s.mal_id===i);a===-1?n.push(e):n.splice(a,1),localStorage.setItem("favoritesAnimes",JSON.stringify(n)),l(),c(o)}function l(){d.innerHTML="";for(const t of n){let i="";i+=`
     <li>
-        <h3>${i.title}</h3>
-        <div class="js-anime-listed" id="${i.mal_id}">
-            <div class="favorites-header"><img class= "anime-image-favorites" src="${i.images.jpg.image_url}" alt="${i.titles[0].title}">
-            <div class= "js-remove-anime remove-button" data-id="${i.mal_id}">❌</div></div>
+        
+        <div class="js-anime-listed" id="${t.mal_id}"> <h3 class="anime-subtitle">${t.title}</h3>
+            <div class="favorites-header"><img class= "anime-image-favorites" src="${t.images.jpg.image_url}" alt="${t.titles[0].title}">
+            <div class= "js-remove-anime remove-button" data-id="${t.mal_id}">❌</div></div>
         </div>
         </div>
     </li>
-`,m.innerHTML+=e}h()}function h(){const i=document.querySelectorAll(".js-remove-anime");for(const e of i)e.addEventListener("click",p)}function p(i){i.stopPropagation();const e=parseInt(i.currentTarget.dataset.id);n=n.filter(a=>a.mal_id!==e),localStorage.setItem("favoritesAnimes",JSON.stringify(n)),l()}function u(){const i=f.value;fetch("https://api.jikan.moe/v4/anime?q="+i).then(e=>e.json()).then(e=>{o=e.data;for(const t of o)t.titles[0].title,t.images.jpg.image_url,v(o)}).catch(e=>console.error("Error al obtener datos de la API:",e))}d.addEventListener("click",u);function v(i){c.innerHTML="";for(const t of i){const a=n.some(r=>r.mal_id===t.mal_id);let s="";s+=`
-            <li class= "anime-item ${a?"favorite-anime-highlight":""}" id="${t.mal_id}">
-                <h3>${t.title}</h3>
-                <div class="anime js-anime-listed" id="${t.mal_id}">
-                    <img class="anime_image" src="${t.images.jpg.image_url}" alt="${t.titles[0].title}">
+`,d.innerHTML+=i}h()}function h(){const t=document.querySelectorAll(".js-remove-anime");for(const i of t)i.addEventListener("click",j)}function j(t){const i=parseInt(t.currentTarget.dataset.id);n=n.filter(e=>e.mal_id!==i),localStorage.setItem("favoritesAnimes",JSON.stringify(n)),l(),c(o)}function v(){const t=f.value;fetch("https://api.jikan.moe/v4/anime?q="+t).then(i=>i.json()).then(i=>{o=i.data;for(const e of o)e.titles[0].title,e.images.jpg.image_url,c(o)}).catch(i=>console.error("Error al obtener datos de la API:",i))}u.addEventListener("click",v);function c(t){m.innerHTML="";for(const e of t){const a=n.some(r=>r.mal_id===e.mal_id);let s="";s+=`
+            <li class= "anime-item ${a?"favorite-anime-highlight":""}" id="${e.mal_id}">
+                <h3 class="anime-subtitle">${e.title}</h3>
+                <div class="anime js-anime-listed" id="${e.mal_id}">
+                    <img class="anime_image" src="${e.images.jpg.image_url}" alt="${e.titles[0].title}">
                 </div>
             </li>
-        `,c.innerHTML+=s}const e=document.querySelectorAll(".js-anime-listed");for(const t of e){t.addEventListener("click",g);const a=parseInt(t.parentElement.id);n.find(r=>r.mal_id===a)&&t.parentElement.classList.add("favorite-anime-highlight")}}d.addEventListener("click",u);l();
+        `,m.innerHTML+=s}const i=document.querySelectorAll(".js-anime-listed");for(const e of i){e.addEventListener("click",g);const a=parseInt(e.parentElement.id);n.find(r=>r.mal_id===a)&&e.parentElement.classList.add("favorite-anime-highlight")}}u.addEventListener("click",v);l();
 //# sourceMappingURL=main.js.map
