@@ -24,7 +24,7 @@ for (const anime of favoritesAnimes) {
     let content = ""
     content += `
     <li>
-        <h3 class="favorite-anime-font">${anime.title}</h3>
+        <h3 class="favorite-anime-font">${anime.title}<i class="fa-solid fa-star"></i></h3>
         <div class="anime js-anime-listed" id="${anime.mal_id}">
             <div class="favorite-anime-background"><img class="anime_image" src="${anime.images.jpg.image_url}" alt="${anime.titles[0].title}"></div> 
         </div>
@@ -86,4 +86,4 @@ function searchAnime () {
     /*if (localStorageAnimes !== null) {
     favoritesAnimes = localStorageAnimes;
     console.log (localStorageAnimes);
-    } else {*/
+    } else {*/ 
