@@ -33,6 +33,7 @@ for (const anime of favoritesAnimes) { // itera con el bucle
     li.innerHTML = `
         
         <div class="js-anime-listed" id="${anime.mal_id}"> <h3 class="anime-subtitle">${anime.title}</h3>
+        <div class="favorites-year">${anime.aired.string}</div>
             <div class="favorites-header"><img class= "anime-image-favorites" src="${anime.images.jpg.image_url}" alt="${anime.titles[0].title}">
             <button class= "js-remove-anime remove-button" data-id="${anime.mal_id}">❌</button></div>
         </div>
@@ -105,6 +106,7 @@ function searchAnime (event) {
             let content = ""
             content += `
             <li class= "anime-item ${isFavorite ? "favorite-anime-highlight" : ""}" id="${anime.mal_id}">
+            <div class="favorites-year">${anime.aired.string}</div>
                 <h3 class="anime-subtitle">${anime.title}</h3>
                 <div class="anime js-anime-listed" id="${anime.mal_id}" data-id="${anime.mal_id}">
                     <img class="anime_image" src="${anime.images.jpg.image_url}" alt="${anime.titles[0].title}">
