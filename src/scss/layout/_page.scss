@@ -1,9 +1,18 @@
 @use '../core/variables' as vars;
 
+$star-color: white;
+$stars-count: 50; // Número de estrellas
+$animation-duration: 5s;
+
 .container {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+.anime {
+    display: flex;
+    justify-content: center;
 }
 
 .find-anime {
@@ -13,32 +22,170 @@
 
 .find-anime-title {
     padding: 20px;
+    font-family: 'Roboto', 'SemiBold 600';
 }
 
 .results-anime {
-    background-color: grey;
-    max-width: 500px;
+    background-color: lighten( rgba(6, 40, 194, 0.397), 10% );
+    width: 700px;
     padding: 20px;
+    border-radius: 10px;
+    border-width: 4px 4px 4px 4px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border: solid lighten( rgb(6, 40, 194), 10%);
 }
 
 .favorites {
-    background-color: aqua;
-    max-width: 500px;
+    background-color: rgb(219, 163, 219);
+    width: 300px;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-style: solid;
+    border-width: 4px 4px 4px 4px; 
+    border-color:  rgb(209, 88, 209);
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
-.favorite-anime-font {
+.favorite-anime-title {
     color: purple;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .favorite-anime-background {
-    background-color: rgb(207, 58, 207);
     padding: 10px;
     width: auto;
 }
 
 .fa-star {
     font-size: 20px;
-    color: yellow;
+    color: rgb(221, 221, 14);
+    display: inline;
 }
+
+.favorites-header {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+
+.fa-xmark {
+    color:black;
+    border: solid 0.2px;
+    font-size: large;
+    background-color: white;
+    padding: 5px;
+}
+
+.fa-xmark:hover {
+    color: white; 
+    background-color: black; 
+}
+
+
+.favorite-anime-highlight {
+    background: url("https://www.transparenttextures.com/patterns/stardust.png"), 
+                linear-gradient(45deg, #1a1a2e, #16213e); // Fondo oscuro con estrellas
+    color: #ffd700; // Color dorado para resaltar
+    border: 2px solid #ffd700;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05); // Pequeño efecto de zoom
+
+    &:hover {
+        transform: scale(1.08); // Un poco más grande al pasar el mouse
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+}
+
+
+
+.input-text {
+    padding: 10px;
+    border: 2px solid rgb(6, 40, 194);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  
+    &:focus {
+        border-color: darken( rgb(6, 40, 194), 15%);
+        box-shadow: 0 0 5px rgba( rgb(6, 40, 194), 0.5);
+    }
+  
+    &:hover {
+        border-color: lighten( rgb(6, 40, 194), 10%);
+    }
+  
+    &::placeholder {
+        color: lighten( rgb(6, 40, 194), 30%);
+        font-style: italic;
+    }
+  }
+
+  .search-button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(209, 88, 209);
+    color: white;
+    &:hover {
+        background-color: lighten( rgb(6, 40, 194), 10%);
+    }
+  }
+
+  .reset-button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(209, 88, 209);
+    color: white;
+    &:hover {
+        background-color: lighten( rgb(6, 40, 194), 10%);
+    }
+  }
+
+  .subtitle {
+    font-family: 'Roboto', 'SemiBold 600';
+    border-radius: 10px;
+    padding: 10px;
+    border: solid rgb(209, 88, 209);
+    border-width: 4px 4px 4px 4px; 
+    border-bottom: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: rgb(209, 88, 209);
+    color: white;
+  }
+
+  .anime-image-favorites {
+    max-width: 60px;
+  }
+
+  .remove-button {
+    color:black;
+    font-size: large;
+    padding: 5px;
+  }
+
+  .anime-subtitle {
+    font-family: 'Roboto', 'SemiBold 600';
+    font-size: 10px;
+    
+  }
+
+  .subtitle-results {
+    font-family: 'Roboto', 'SemiBold 600';
+    border-radius: 10px;
+    padding: 10px;
+    border: solid lighten( rgb(6, 40, 194), 10%);
+    border-width: 4px 4px 4px 4px; 
+    border-bottom: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: lighten( rgb(6, 40, 194), 10%);
+    color: white;
+  }

@@ -11,15 +11,17 @@
   </head>
 
   <body>
-    <h1 class="find-anime-title">Busca tu anime favorito</h1>
+    <h1 class="find-anime-title">Busca tu anime favorito 😼</h1>
     <section class="find-anime">
-  <label for="name">Buscar anime</label>
-    <input type="text" name="name" class="js-search-anime" placeholder="Buscar...">
-    <input class="js-search-button" type="submit" value="Buscar"></button>
+  
+    <input type="text" name="name" class="js-search-anime input-text" placeholder="Buscar...">
+    <input class="js-search-button search-button" type="submit" value="Buscar">
+    <input class="js-reset-button reset-button" type="submit" value="Reset">
   </section>
     <main class="container">
-      <div><h2>Favoritos</h2><ul class="js-anime-favorites favorites"></ul></div>
-      <div><h2>Resultados</h2><ul class="js-anime-results results-anime"></div></ul>
+      <div><h2 class="subtitle">Series favoritas<i class="fa-solid fa-star"></i></h2>
+        <ul class="js-anime-favorites favorites"></ul></div>
+      <div><h2 class="subtitle-results">Resultados</h2><ul class="js-anime-results results-anime"></div></ul>
     </main>
     <script src="./js/main.js"></script>
   </body>
