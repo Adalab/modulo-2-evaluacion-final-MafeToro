@@ -25,6 +25,7 @@ for (const anime of favoritesAnimes) {
     content += `
     <li>
         <h3 class="favorite-anime-font">${anime.title}<i class="fa-solid fa-star"></i></h3>
+        <div class="favorite-anime-year">${anime.aired.string}</div>
         <div class="anime js-anime-listed" id="${anime.mal_id}">
             <div class="favorite-anime-background"><img class="anime_image" src="${anime.images.jpg.image_url}" alt="${anime.titles[0].title}"></div> 
         </div>
@@ -62,6 +63,7 @@ function searchAnime () {
             <li>
                 <h3>${anime.title}</h3>
                 <div class="anime js-anime-listed" id="${anime.mal_id}">
+                <div class="favorite-anime-year">${anime.aired.string}</div>
                     <img class="anime_image" src="${anime.images.jpg.image_url}" alt="${anime.titles[0].title}"> 
                 </div>
             </li>
